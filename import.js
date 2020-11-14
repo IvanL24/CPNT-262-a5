@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv').config();
 
 const dbSeed = require(`./seeds/japans.js`);
-const Animal = require(`./models/japan.js`);
+const Japan = require(`./models/japan.js`);
 
 mongoose.connect(process.env.MONGODB_URL, {
   useUnifiedTopology: true,
@@ -19,7 +19,7 @@ db.once('open', function() {
   console.log('Connected to DB...');
 });
 
-Animal.insertMany(dbSeed, function(error, japan){
+Japan.insertMany(dbSeed, function(error, japan){
   console.log('Data import completed.')
   mongoose.connection.close();
 });

@@ -1,0 +1,8 @@
+#dotenev
+.env
+
+#node
+node_modules/
+
+#vscode
+.vscode

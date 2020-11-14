@@ -7,6 +7,7 @@ require('dotenv').config();
 
 // require gallery module
 const japan = require('./models/japan');
+const { response } = require('express');
 
 //create express app
 const app = express();
@@ -34,22 +35,24 @@ db.once('open', function(){
   console.log('Connected to DB')
 });
 
+// JSON ENDPOINTS
 
-// homepage render
-app.get('/', function(request, response){
-  response.render('pages/index.ejs',{title: 'please'})
+// RETURNS ARRAY
+
+app.get('/api/v0/japan/:id', function(request,response){
+  Japan.find({}, function(error,data){
+    if (error) {
+      response.send('file does not exist')
+    }
+    else {
+      response.json(data)
+    }
+  });
 });
 
+// RETURNS OBJECTS
 
-// gallery page render
-app.get('/gallery', function(request, response){
-  response.render('pages/gallery',{title: 'gallery'})
-});
 
-// subscribe page render
-app.get('/subscribe', function(request, response){
-  response.render('pages/subscribe',{title: 'subscribe'})
-});
 
 // json endpoint for gallery
 app.get('/api/v0/gallery', function(request,response){
@@ -69,3 +72,21 @@ const PORT = process.env.PORT || 8080;
 app.listen(PORT, function(){
   console.log(`Listening on port ${PORT}`);
 });
+
+
+
+  // // homepage render
+  // app.get('/', function(request, response){
+  //   response.render('pages/index.ejs',{title: 'please'})
+  // });
+  
+  
+  // // gallery page render
+  // app.get('/gallery', function(request, response){
+  //   response.render('pages/gallery',{title: 'gallery'})
+  // });
+  
+  // // subscribe page render
+  // app.get('/subscribe', function(request, response){
+  //   response.render('pages/subscribe',{title: 'subscribe'})
+  // });

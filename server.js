@@ -37,7 +37,7 @@ db.once('open', function(){
 
 // homepage
 app.get('/', function(request, response){
-     response.render('this is homepage')
+     response.send('this is homepage')
    });
 
 // JSON ENDPOINTS

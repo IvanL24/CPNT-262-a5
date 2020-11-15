@@ -38,7 +38,7 @@ db.once('open', function(){
 
 // HOMEPAGE
 app.get('/', function(request, response){
-     response.send("<h1>WELCOME! Here you can find the endpoints use in this assignment</h1><br> <h2><p>to access the array of object, copy the given the endpoint : /api/v0/japans</p></h2>")
+     response.send("<h1>WELCOME! Here you can find the endpoints use in this assignment</h1><br> <h2><p>To access the array of object, copy and paste the given the endpoint : <em>/api/v0/japans</em></p></h2> <br> <h2><p>In order to access the object individually, follow this: <em>/api/v0/japans/[any numbers from 101 - 108 only]</em></p></h2> ")
    });
 
 // JSON ENDPOINTS

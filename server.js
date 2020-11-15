@@ -20,7 +20,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({extended: true}));
 
 
-// connect to mongooseDB
+// CONNECT TO MONGODB
 mongoose.connect(process.env.MONGODB_URL, {
   useUnifiedTopology: true,
   useNewUrlParser: true
@@ -36,15 +36,14 @@ db.once('open', function(){
   console.log('Connected to DB ...')
 });
 
-// homepage
+// HOMEPAGE
 app.get('/', function(request, response){
-     response.send('this is homepage')
+     response.send("<h1>WELCOME! Here you can find the endpoints use in this assignment</h1><br> <h2><p>to access the array of object, copy the given the endpoint : /api/v0/japans</p></h2>")
    });
 
 // JSON ENDPOINTS
 
 // RETURNS ARRAY
-
 app.get('/api/v0/japans', function(request,response){
   Japan.find({}, function(error,data){
     if (error) {
@@ -56,6 +55,8 @@ app.get('/api/v0/japans', function(request,response){
   });
 });
 
+
+// RETURNS OBJECTS INDIVIDUALLY
 app.get('/api/v0/japans/:id', function(request,response){
   let japanId = request.params.id;
   Japan.findOne({id: japanId}, function(error,data){
@@ -68,19 +69,17 @@ app.get('/api/v0/japans/:id', function(request,response){
   });
 });
 
-// RETURNS OBJECTS
 
-
-// middleware
+// MIDDLEWARE
 app.use(function(req, res) {
   res.status(404);
   res.send('404: File Not Found');
 });
 
-// set port preference
+// PORT PREFERENCE
 const PORT = process.env.PORT || 8080;
 
-// start server
+// START SERVER
 app.listen(PORT, function(){
   console.log(`Listening on port ${PORT}`);
 });

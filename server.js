@@ -5,9 +5,8 @@ const ejs = require('ejs');
 const mongoose = require('mongoose');
 require('dotenv').config();
 
-// require gallery module
-const Japan = require('./models/japan.js');
-const { response } = require('express');
+// IMPORT MODELS
+const Japans = require('./models/japan.js');
 
 //create express app
 const app = express();
@@ -45,7 +44,7 @@ app.get('/', function(request, response){
 // RETURNS ARRAY
 
 app.get('/api/v0/japans', function(request,response){
-  Japan.find({}, function(error,data){
+  Japans.find({}, function(error,data){
     if (error) {
       response.send('file does not exist')
     }

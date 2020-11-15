@@ -50,19 +50,13 @@ app.get('/api/v0/japans', function(request,response){
       response.send('file does not exist')
     }
     else {
-      response.json(data)
+      response.json(data);
     }
   });
 });
 
 // RETURNS OBJECTS
 
-
-
-// json endpoint for gallery
-app.get('/api/v0/gallery', function(request,response){
-  response.json(japan);
-});
 
 // middleware
 app.use(function(req, res) {

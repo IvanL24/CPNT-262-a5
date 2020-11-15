@@ -35,6 +35,11 @@ db.once('open', function(){
   console.log('Connected to DB')
 });
 
+// homepage
+app.get('/', function(request, response){
+     response.render('this is homepage')
+   });
+
 // JSON ENDPOINTS
 
 // RETURNS ARRAY

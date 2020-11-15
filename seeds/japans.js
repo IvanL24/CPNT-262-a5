@@ -6,7 +6,6 @@ const japan = [
     height:       300,
     description: 'Shrine entrance painting',
 
-    imagePath:   `public/images/gallery/101.jpg`
   },
   {
     id:           102,
@@ -15,7 +14,6 @@ const japan = [
     height:       300,
     description: 'Alley way',
 
-    imagePath:   `public/images/gallery/102.jpg`
   },
   {
     id:           103,
@@ -24,7 +22,6 @@ const japan = [
     height:       300,
     description: 'Christmas store front',
 
-    imagePath:   `public/images/gallery/103.jpg`
   },
   {
     id:           104,
@@ -33,7 +30,6 @@ const japan = [
     height:       300,
     description: 'Rainy night',
 
-    imagePath:   `public/images/gallery/104.jpg`
   },
   {
     id:           105,
@@ -42,7 +38,6 @@ const japan = [
     height:       300,
     description: 'Night life',
 
-    imagePath:   `public/images/gallery/105.jpg`
   },
   {
     id:           106,
@@ -51,7 +46,6 @@ const japan = [
     height:       300,
     description: 'Matsumoto castle',
 
-    imagePath:   `public/images/gallery/106.jpg`
   },
   {
     id:           107,
@@ -60,7 +54,6 @@ const japan = [
     height:       300,
     description: 'Tokyo Imperial Palace',
 
-    imagePath:   `public/images/gallery/107.jpg`
   },
   {
     id:           108,
@@ -69,7 +62,6 @@ const japan = [
     height:       300,
     description: 'Mount Fuji',
 
-    imagePath:   `public/images/gallery/108.jpg`
   },
 ];
 

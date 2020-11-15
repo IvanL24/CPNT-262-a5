@@ -11,4 +11,4 @@ const gallerySchema = new mongoose.Schema(
   }
 );
 
-module.exports = mongoose.model('japan', gallerySchema);
+module.exports = mongoose.model('Japan', gallerySchema);

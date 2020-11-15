@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 
 // require gallery module
-const japan = require('./models/japan');
+const Japan = require('./models/japan.js');
 const { response } = require('express');
 
 //create express app

@@ -44,7 +44,7 @@ app.get('/', function(request, response){
 
 // RETURNS ARRAY
 
-app.get('/api/v0/japan/:id', function(request,response){
+app.get('/api/v0/japans', function(request,response){
   Japan.find({}, function(error,data){
     if (error) {
       response.send('file does not exist')

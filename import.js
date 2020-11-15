@@ -1,9 +1,13 @@
 const mongoose = require('mongoose');
 const dotenv = require('dotenv').config();
 
+// IMPORT SEEDS DATA
 const dbSeed = require(`./seeds/japans.js`);
+
+// DEFINE MODEL
 const Japan = require(`./models/japan.js`);
 
+// MONGODB CONNECTION
 mongoose.connect(process.env.MONGODB_URL, {
   useUnifiedTopology: true,
   useNewUrlParser: true

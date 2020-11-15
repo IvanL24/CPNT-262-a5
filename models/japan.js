@@ -6,8 +6,7 @@ const gallerySchema = new mongoose.Schema(
     title:        String,
     width:        Number,
     Height:       Number,
-    description:  String,
-    imagePath:    String
+    description:  String
   }
 );
 

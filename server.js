@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 
 // IMPORT MODELS
-const Japans = require('./models/japan.js');
+const Japan = require('./models/japan.js');
 
 //create express app
 const app = express();
@@ -14,8 +14,10 @@ const app = express();
 // view engine
 app.set('view engine', 'ejs');
 
-// middleware
+// app.use FOR USING MIDDLEWARE
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(express.urlencoded({extended: true}));
 
 
 // connect to mongooseDB
@@ -31,7 +33,7 @@ db.on('error', function(error){
 });
 
 db.once('open', function(){
-  console.log('Connected to DB')
+  console.log('Connected to DB ...')
 });
 
 // homepage
@@ -44,7 +46,7 @@ app.get('/', function(request, response){
 // RETURNS ARRAY
 
 app.get('/api/v0/japans', function(request,response){
-  Japans.find({}, function(error,data){
+  Japan.find({}, function(error,data){
     if (error) {
       response.send('file does not exist')
     }

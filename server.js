@@ -56,6 +56,18 @@ app.get('/api/v0/japans', function(request,response){
   });
 });
 
+app.get('/api/v0/japans/:id', function(request,response){
+  let japanId = request.params.id;
+  Japan.findOne({id: japanId}, function(error,data){
+    if (error) {
+      response.send('file does not exist')
+    }
+    else {
+      response.json(data);
+    }
+  });
+});
+
 // RETURNS OBJECTS
 
 

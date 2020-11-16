@@ -58,6 +58,9 @@ app.get('/api/v0/japans', function(request,response){
 
 // RETURNS OBJECTS INDIVIDUALLY
 app.get('/api/v0/japans/:id', function(request,response){
+
+
+
   let japanId = request.params.id;
   Japan.findOne({id: japanId}, function(error,data){
     if (error) {
@@ -83,21 +86,3 @@ const PORT = process.env.PORT || 8080;
 app.listen(PORT, function(){
   console.log(`Listening on port ${PORT}`);
 });
-
-
-
-  // // homepage render
-  // app.get('/', function(request, response){
-  //   response.render('pages/index.ejs',{title: 'please'})
-  // });
-  
-  
-  // // gallery page render
-  // app.get('/gallery', function(request, response){
-  //   response.render('pages/gallery',{title: 'gallery'})
-  // });
-  
-  // // subscribe page render
-  // app.get('/subscribe', function(request, response){
-  //   response.render('pages/subscribe',{title: 'subscribe'})
-  // });

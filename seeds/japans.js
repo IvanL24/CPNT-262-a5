@@ -1,4 +1,4 @@
-const japan = [
+const japans = [
   {
     id:           101,
     title:       'Shrine entrance painting',
@@ -65,4 +65,4 @@ const japan = [
   },
 ];
 
-module.exports = japan;
+module.exports = japans;
